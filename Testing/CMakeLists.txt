@@ -7,6 +7,7 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 set(TEST_CASES
   DummyTest
   GTestCheckTest
+  BasicPositionalArgumentParsingChecksTest
 )
 
 foreach(_test_case ${TEST_CASES})
