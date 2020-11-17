@@ -37,18 +37,18 @@ albion::App& albion::App::operator=(albion::App&& another)
     return *this;
 }
 
-albion::App& albion::App::version(std::string version)
+albion::App&& albion::App::version(std::string version)
 {
     this->app_version = version;
 
-    return *this;
+    return std::move(*this);
 }
 
-albion::App& albion::App::author(std::string author)
+albion::App&& albion::App::author(std::string author)
 {
     this->app_author = author;
 
-    return *this;
+    return std::move(*this);
 }
 
 std::string albion::App::get_name()

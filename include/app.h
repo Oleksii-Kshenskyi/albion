@@ -13,8 +13,8 @@ namespace albion
             std::string get_version();
             std::string get_author();
 
-            App& version(std::string version);
-            App& author(std::string author);
+            App&& version(std::string version);
+            App&& author(std::string author);
 
         private:
             std::string app_name;

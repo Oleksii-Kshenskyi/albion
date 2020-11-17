@@ -8,9 +8,9 @@ class BasicPositionalArgumentParsingChecksTest : public ::testing::Test
         albion::App basic_check_app;
 
         BasicPositionalArgumentParsingChecksTest(): basic_check_app(
-            std::move(albion::App("Positional Argument Test").
+            albion::App("Positional Argument Test").
                 version("1.0.0").
-                author("Oleksii Kshenskyi"))/*.
+                author("Oleksii Kshenskyi")/*.
                 argument(
                     albion::Arg().
                         short_name("f").
