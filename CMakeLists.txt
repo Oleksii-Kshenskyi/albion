@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.18.4)
 
 project(albion)
 set(ALBI_DIR src/lib)
-set(ALBI_SRC ${ALBI_DIR}/dummy.cpp)
+set(ALBI_SRC ${ALBI_DIR}/dummy.cpp
+             ${ALBI_DIR}/app.cpp)
 
 enable_testing()
 find_package(GTest REQUIRED)
