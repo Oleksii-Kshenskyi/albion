@@ -10,10 +10,12 @@ albion::App::App(App&& another)
     this->app_name = another.app_name;
     this->app_version = another.app_version;
     this->app_author = another.app_author;
+    this->app_about = another.app_about;
 
     another.app_name.clear();
     another.app_version.clear();
     another.app_author.clear();
+    another.app_about.clear();
 }
 
 albion::App::App(std::string app_name)
@@ -28,10 +30,12 @@ albion::App& albion::App::operator=(albion::App&& another)
         this->app_name = another.app_name;
         this->app_version = another.app_version;
         this->app_author = another.app_author;
+        this->app_about = another.app_about;
 
         another.app_name.clear();
         another.app_version.clear();
         another.app_author.clear();
+        another.app_about.clear();
     }
 
     return *this;
@@ -51,6 +55,13 @@ albion::App&& albion::App::author(std::string author)
     return std::move(*this);
 }
 
+albion::App&& albion::App::about(std::string about)
+{
+    this->app_about = about;
+
+    return std::move(*this);
+}
+
 std::string albion::App::get_name()
 {
     return this->app_name;
@@ -64,4 +75,9 @@ std::string albion::App::get_version()
 std::string albion::App::get_author()
 {
     return this->app_author;
+}
+
+std::string albion::App::get_about()
+{
+    return this->app_about;
 }

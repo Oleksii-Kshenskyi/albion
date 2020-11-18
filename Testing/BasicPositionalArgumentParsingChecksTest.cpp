@@ -10,7 +10,8 @@ class BasicPositionalArgumentParsingChecksTest : public ::testing::Test
         BasicPositionalArgumentParsingChecksTest(): basic_check_app(
             albion::App("Positional Argument Test").
                 version("1.0.0").
-                author("Oleksii Kshenskyi")/*.
+                author("Oleksii Kshenskyi").
+                about("This is a test to check the correctness of basic positional argument parsing.")/*.
                 argument(
                     albion::Arg().
                         short_name("f").
@@ -40,9 +41,11 @@ TEST_F(BasicPositionalArgumentParsingChecksTest, BasicAppClassIntegrityCheck)
     std::string expected_app_name = "Positional Argument Test";
     std::string expected_app_version = "1.0.0";
     std::string expected_app_author = "Oleksii Kshenskyi";
+    std::string expected_app_about = "This is a test to check the correctness of basic positional argument parsing.";
     EXPECT_EQ(basic_check_app.get_name(), expected_app_name);
     EXPECT_EQ(basic_check_app.get_version(), expected_app_version);
     EXPECT_EQ(basic_check_app.get_author(), expected_app_author);
+    EXPECT_EQ(basic_check_app.get_about(), expected_app_about);
 }
 
 /*TEST_F(BasicPositionalArgumentParsingChecksTest, BasicPositionalArgumentParsingCheck)
